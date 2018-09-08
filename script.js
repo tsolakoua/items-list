@@ -52,3 +52,13 @@ var itemsList = {
         this.displayItems();
     }
 };
+
+var displayAllButton = document.getElementById('displayAllButton');
+displayAllButton.addEventListener('click', function(){
+  itemsList.displayItems();
+});
+
+var toggleAll = document.getElementById('toggleAll');
+toggleAll.addEventListener('click', function(){
+  itemsList.toggleAll();
+});
