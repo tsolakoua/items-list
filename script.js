@@ -1,7 +1,17 @@
 var itemsList = {
   items: [],
   displayItems: function() {
-    console.log('My items', this.items);
+    console.log('My items');
+    if (this.items.length === 0) {
+      console.log('The list is empty');
+    } else {
+    } for (var i = 0; i < this.items.length; i++) {
+      if (this.items[i].completed === false) {
+        console.log('( )',this.items[i].itemName);
+      } else {
+        console.log('(x)',this.items[i].itemName);
+      }
+    }
   },
   addItem: function(itemName) {
     this.items.push({
@@ -21,5 +31,6 @@ var itemsList = {
   toggleCompleted: function(index) {
     var toggle_status = this.items[index].completed;
     this.items[index].completed = !toggle_status;
+    this.displayItems();
   }
 };
