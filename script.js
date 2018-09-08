@@ -53,12 +53,11 @@ var itemsList = {
     }
 };
 
-var displayAllButton = document.getElementById('displayAllButton');
-displayAllButton.addEventListener('click', function(){
-  itemsList.displayItems();
-});
-
-var toggleAll = document.getElementById('toggleAll');
-toggleAll.addEventListener('click', function(){
-  itemsList.toggleAll();
-});
+var handlers = {
+  displayItems: function(){
+    itemsList.displayItems();
+  },
+  toggleAll: function(){
+    itemsList.toggleAll();
+  }
+};
