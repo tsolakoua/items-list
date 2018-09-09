@@ -73,9 +73,6 @@ var handlers = {
     itemsList.deleteItem(document.getElementById('deletePosition').value);
     document.getElementById('deletePosition').value = '';
   },
-  toggleAll: function() {
-    itemsList.toggleAll();
-  },
   toggleCompleted: function() { 
     itemsList.toggleCompleted(document.getElementById('togglePosition').value);
     document.getElementById('togglePosition').value = '';
