@@ -79,5 +79,5 @@ var handlers = {
   toggleCompleted: function() { 
     itemsList.toggleCompleted(document.getElementById('togglePosition').value);
     document.getElementById('togglePosition').value = '';
-  },
+  }
 };
