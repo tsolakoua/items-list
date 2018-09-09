@@ -54,10 +54,30 @@ var itemsList = {
 };
 
 var handlers = {
-  displayItems: function(){
+  displayItems: function() {
     itemsList.displayItems();
   },
-  toggleAll: function(){
+  toggleAll: function() {
     itemsList.toggleAll();
-  }
+  },
+  addItem: function() { 
+    itemsList.addItem(document.getElementById('addItemText').value);
+    document.getElementById('addItemText').value = '';
+  },  
+  changeItem: function() { 
+    itemsList.changeItem(document.getElementById('addPosition').value,document.getElementById('updatedItemText').value );
+    document.getElementById('addPosition').value = '';
+    document.getElementById('updatedItemText').value = '';
+  },
+  deleteItem: function() { 
+    itemsList.deleteItem(document.getElementById('deletePosition').value);
+    document.getElementById('deletePosition').value = '';
+  },
+  toggleAll: function() {
+    itemsList.toggleAll();
+  },
+  toggleCompleted: function() { 
+    itemsList.toggleCompleted(document.getElementById('togglePosition').value);
+    document.getElementById('togglePosition').value = '';
+  },
 };
