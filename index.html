@@ -1,15 +1,34 @@
 <!DOCTYPE html>
 <html>
-
-  <head>
-    <link rel="stylesheet" href="style.css">
-  </head>
-
-  <body>
-    <h1>Items List</h1>
-    <button onclick = "handlers.displayItems()">Display all</button>
-    <button onclick = "handlers.toggleAll()">Toggle All</button>
-    <script src="script.js"></script>
-  </body>
-
+   <head>
+      <link rel="stylesheet" href="style.css">
+   </head>
+   <body>
+      <h1>Items List</h1>
+      <div>
+         <button onclick = "handlers.displayItems()">Display all</button>
+         <button onclick = "handlers.toggleAll()">Toggle all</button>
+      </div>
+      <div>
+         <button onclick = "handlers.addItem()">Add new item</button>
+         <input id = "addItemText" type = "text">
+      </div>
+      <div>
+         <button onclick = "handlers.changeItem()">Change item</button>
+         <input id = "addPosition" type = "number">
+         <input id = "updatedItemText" type = "text">
+      </div>      
+      <div>
+         <button onclick = "handlers.deleteItem()">Delete item</button>
+         <input id = "deletePosition" type = "number">
+      </div>   
+      <div>
+         <button onclick = "handlers.toggleAll()">Toggle all</button>
+      </div>  
+      <div>
+         <button onclick = "handlers.toggleCompleted()">Toggle</button>
+         <input id = "togglePosition" type = "number">
+      </div> 
+      <script src="script.js"></script>
+   </body>
 </html>
