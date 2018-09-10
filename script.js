@@ -76,7 +76,14 @@ var view = {
         textCompleted = '( ) ';
       }
       itemsLi.textContent = textCompleted + itemsList.items[i].itemName;
+      itemsLi.appendChild(this.createDeleteButton());
       itemsUl.appendChild(itemsLi);
     }
-  }  
+  },
+  createDeleteButton: function() {
+    var deleteButton = document.createElement('button');
+    deleteButton.textContent = 'Delete';
+    deleteButton.className = 'deleteButton';
+    return deleteButton;
+  }
 };
