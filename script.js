@@ -51,9 +51,8 @@ var handlers = {
     document.getElementById('updatedItemText').value = '';
     view.displayItems();    
   },
-  deleteItem: function() { 
-    itemsList.deleteItem(document.getElementById('deletePosition').value);
-    document.getElementById('deletePosition').value = '';
+  deleteItem: function(position) { 
+    itemsList.deleteItem(position);
     view.displayItems();    
   },
   toggleCompleted: function() { 
@@ -85,5 +84,16 @@ var view = {
     deleteButton.textContent = 'Delete';
     deleteButton.className = 'deleteButton';
     return deleteButton;
+  },
+  setUpEventListeners: function() {
+    var itemsUl = document.querySelector('ul');
+    itemsUl.addEventListener('click', function(event){
+      var elementClicked = event.target;
+      if (elementClicked.className === 'deleteButton') {
+        handlers.deleteItem(parseInt(elementClicked.parentNode.id));
+      }
+    });
   }
 };
+
+view.setUpEventListeners();
