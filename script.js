@@ -18,19 +18,37 @@ var itemsList = {
     },
     toggleAll: function() {
         var count = 0;
-        for (var i = 0; i < this.items.length; i++) {
+       /* for (var i = 0; i < this.items.length; i++) {
             if (this.items[i].completed === false) {
                 count++;
             }
-        }
+        } */
+        
+        this.items.forEach(function(item){
+          if (item.completed === false) {
+            count++;
+          }
+        });
+        
+        
         if (count === this.items.length) {
-            for (var i = 0; i < this.items.length; i++) {
+          
+            /* for (var i = 0; i < this.items.length; i++) {
                 this.items[i].completed = true;
-            }
+            } */
+            
+            this.items.forEach(function(item){
+              item.completed = true;
+            });
         } else {
-            for (var i = 0; i < this.items.length; i++) {
+          
+            /* for (var i = 0; i < this.items.length; i++) {
                 this.items[i].completed = false;
-            }
+            } */
+            
+            this.items.forEach(function(item){
+              item.completed = false;
+            });
         }
     }
 };
