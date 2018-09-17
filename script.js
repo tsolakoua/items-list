@@ -67,18 +67,21 @@ var view = {
     displayItems: function() {
         var itemsUl = document.querySelector('ul');
         itemsUl.innerHTML = '';
-        for (var i = 0; i < itemsList.items.length; i++) {
+        itemsList.items.forEach(function(item, position){
             var itemsLi = document.createElement('li');
             var textCompleted = '';
-            if (itemsList.items[i].completed === true) {
+            if (item.completed === true) {
                 textCompleted = '(x) ';
             } else {
                 textCompleted = '( ) ';
             }
-            itemsLi.textContent = textCompleted + itemsList.items[i].itemName;
+            itemsLi.id = position;
+            itemsLi.textContent = textCompleted + item.itemName;
             itemsLi.appendChild(this.createDeleteButton());
             itemsUl.appendChild(itemsLi);
-        }
+          
+        }, this);
+
     },
     createDeleteButton: function() {
         var deleteButton = document.createElement('button');
